@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Nav } from "@/components/Nav";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { projects } from "@/content/projects";
+import { withResolvedImages } from "@/lib/images";
 import { education, experience, site, skills } from "@/content/site";
 
 export default function Home() {
@@ -81,7 +82,7 @@ function Work() {
   return (
     <section id="work" className="scroll-mt-24 border-b border-border py-16">
       <SectionHeading id="work-heading" label="Selected work" note={`${projects.length} projects`} />
-      <ProjectGrid projects={projects} />
+      <ProjectGrid projects={withResolvedImages(projects)} />
       <p className="mt-8 text-sm text-muted">
         More on{" "}
         <a

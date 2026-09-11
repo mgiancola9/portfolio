@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { CATEGORY_LABELS, type Category, type Project } from "@/content/projects";
@@ -50,7 +51,19 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="group relative flex flex-col rounded-xl border border-border bg-surface p-5 transition-colors hover:border-accent/60">
+    <article className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-accent/60">
+      {project.image && (
+        <div className="relative aspect-[16/9] border-b border-border bg-bg">
+          <Image
+            src={project.image}
+            alt={project.imageAlt ?? project.title}
+            fill
+            sizes="(max-width: 640px) 100vw, 50vw"
+            className="object-cover"
+          />
+        </div>
+      )}
+      <div className="flex flex-1 flex-col p-5">
       <div className="mb-2 flex items-baseline justify-between gap-3">
         <h3 className="text-base font-semibold tracking-tight">
           <Link href={`/projects/${project.slug}`} className="after:absolute after:inset-0">
@@ -79,6 +92,7 @@ function ProjectCard({ project }: { project: Project }) {
             {t}
           </span>
         ))}
+      </div>
       </div>
     </article>
   );

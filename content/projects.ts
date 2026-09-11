@@ -12,6 +12,9 @@ export type Project = {
   tags: string[];
   links: ProjectLink[];
   featured?: boolean;
+  /** Drop a file in public/projects/ and point here, e.g. "/projects/trayce.png". */
+  image?: string;
+  imageAlt?: string;
   /** Case-study body. Kept short on purpose — recruiters skim. */
   problem: string;
   approach: string[];
@@ -28,6 +31,8 @@ export const CATEGORY_LABELS: Record<Category, string> = {
 export const projects: Project[] = [
   {
     slug: "gta-roofing-estimates",
+    image: "/projects/gta-roofing-estimates.png",
+    imageAlt: "The GTA Roofing Estimates instant-quote flow",
     title: "GTA Roofing Estimates",
     tagline:
       "Satellite-measured roof estimates for Toronto-area homeowners. 100+ leads generated at an 80% phone-qualified conversion rate.",
@@ -53,6 +58,8 @@ export const projects: Project[] = [
   },
   {
     slug: "trayce",
+    image: "/projects/trayce.png",
+    imageAlt: "The Trayce hospital food-delivery dashboard",
     title: "Trayce",
     tagline:
       "A dashboard helping hospitals optimize patient food delivery and cut waste. 3rd place at the Enactus × Canadian Tire Environmental Sustainability Challenge, 2025.",
@@ -72,6 +79,8 @@ export const projects: Project[] = [
   },
   {
     slug: "nhl-props-model",
+    image: "/projects/nhl-props-model.png",
+    imageAlt: "The NHL props model's +EV board",
     title: "NHL Player Props Model",
     tagline:
       "End-to-end pipeline that ingests NHL and advanced-analytics data, predicts player props with calibrated gradient-boosted models, and flags +EV positions against live sportsbook and prediction-market prices.",
@@ -89,10 +98,12 @@ export const projects: Project[] = [
       "Wrote a grading and PnL harness that settles each logged play against the real box score, so every recommendation is scored after the fact instead of being taken on faith.",
     ],
     result:
-      "TODO — replace with your real tracked record: sample size, win/loss, ROI, and the period it covers.",
+      "A working research loop: data lands, models retrain, plays get priced against live markets, and results are graded automatically against box scores. The grading harness is the point — it makes every recommendation falsifiable rather than something to argue about after the fact.",
   },
   {
     slug: "nfl-predictions",
+    image: "/projects/nfl-predictions.png",
+    imageAlt: "NFL model evaluation output",
     title: "NFL Predictions Model",
     tagline:
       "Machine-learning models predicting NFL game outcomes from historical team metrics and betting market data, 2020–2025.",
@@ -133,6 +144,8 @@ export const projects: Project[] = [
   },
   {
     slug: "microcontroller-casino",
+    image: "/projects/microcontroller-casino.png",
+    imageAlt: "The STM32 casino build on the bench",
     title: "Microcontroller Casino",
     tagline:
       "Blackjack and Roulette running on bare-metal STM32, built from the circuit up.",

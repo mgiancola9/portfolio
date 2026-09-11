@@ -1,9 +1,11 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Nav } from "@/components/Nav";
 import { CATEGORY_LABELS, bySlug, projects } from "@/content/projects";
 import { site } from "@/content/site";
+import { withResolvedImage } from "@/lib/images";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -24,8 +26,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
 export default async function ProjectPage({ params }: Params) {
   const { slug } = await params;
-  const project = bySlug(slug);
-  if (!project) notFound();
+  const found = bySlug(slug);
+  if (!found) notFound();
+  const project = withResolvedImage(found);
 
   const index = projects.findIndex((p) => p.slug === slug);
   const next = projects[(index + 1) % projects.length];
@@ -65,6 +68,19 @@ export default async function ProjectPage({ params }: Params) {
             </div>
           )}
         </header>
+
+        {project.image && (
+          <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-xl border border-border bg-surface">
+            <Image
+              src={project.image}
+              alt={project.imageAlt ?? project.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-cover"
+              priority
+            />
+          </div>
+        )}
 
         <div className="mt-10 space-y-10">
           <Block label="Problem">
