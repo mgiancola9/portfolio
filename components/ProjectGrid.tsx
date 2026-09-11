@@ -93,6 +93,23 @@ function ProjectCard({ project }: { project: Project }) {
           </span>
         ))}
       </div>
+
+      {project.links.length > 0 && (
+        /* Sits above the card's full-bleed overlay link so these stay clickable. */
+        <div className="relative z-10 mt-4 flex flex-wrap gap-x-4 gap-y-1 border-t border-border pt-3">
+          {project.links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-[11px] text-muted underline decoration-border underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+            >
+              {l.label} ↗
+            </a>
+          ))}
+        </div>
+      )}
       </div>
     </article>
   );

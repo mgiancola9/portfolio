@@ -35,26 +35,29 @@ export const projects: Project[] = [
     imageAlt: "The GTA Roofing Estimates instant-quote flow",
     title: "GTA Roofing Estimates",
     tagline:
-      "Satellite-measured roof estimates for Toronto-area homeowners. 100+ leads generated at an 80% phone-qualified conversion rate.",
+      "An automated roofing lead engine: trained Meta ad campaigns in, satellite-qualified homeowner out, routed to a subscribed contractor in their service area. 100+ leads at 80% phone-qualified conversion.",
     role: "Co-Founder",
     period: "Sept 2025 – Present",
     category: "product",
-    tags: ["Next.js 15", "Supabase", "Google Solar API", "Twilio", "n8n", "PostgreSQL"],
+    tags: ["Next.js 15", "Supabase", "Google Solar API", "Twilio", "n8n", "Meta Ads", "PostgreSQL"],
     links: [
       { label: "Live site", href: "https://gtaroofingestimates.ca" },
       { label: "GitHub", href: "https://github.com/mgiancola9/gta-roofing-estimates" },
     ],
     featured: true,
     problem:
-      "Roofing quotes in the GTA are guesswork. Homeowners sit through multiple in-person visits to get wildly different numbers, and contractors burn time quoting leads that were never going to convert.",
+      "Roofing contractors buy leads from aggregators that sell the same homeowner to four competitors, then lose the day driving to quotes that were never going to close. Homeowners sit through those same visits and collect wildly different numbers. Both sides lose to one gap: nobody knows whether a lead is real before someone gets in a truck.",
     approach: [
-      "Measured roof area, pitch, and facet count directly from satellite imagery via the Google Solar API, so an estimate needs nothing but an address.",
-      "Built a transparent pricing model on top of the measurements — squares, waste allowance scaled to roof complexity, material cost bands, and pitch and location multipliers.",
-      "Designed the backend end-to-end: Supabase Postgres with row-level security on lead data, Twilio SMS verification to confirm real homeowners, and n8n orchestration routing verified leads to contractor partners in real time.",
-      "Architected the full submission-to-live-lead pipeline to run unattended, with no manual intervention on routing.",
+      "Ran trained Meta ad campaigns as the top of the funnel, targeting GTA homeowners and feeding them into a single intake flow.",
+      "Replaced manual qualification with measurement: roof area, pitch, and facet count pulled from satellite imagery via the Google Solar API, so an address alone produces a real estimate in about 60 seconds.",
+      "Priced that measurement transparently — squares, waste allowance scaled to roof complexity, material cost bands, and pitch and location multipliers — so the homeowner gets a defensible number instead of a regional average.",
+      "Sent the same costed scope to both sides of the marketplace: the homeowner learns what the job should cost, and the contractor receives a pre-measured job with an estimated cost attached, so they can judge whether it is worth taking before driving out to quote it.",
+      "Confirmed intent with Twilio SMS verification before a lead was passed on at all, filtering bad numbers and tire-kickers out of the pipeline early.",
+      "Matched verified leads to partner contractors by service area, orchestrated in n8n on top of Supabase Postgres with row-level security on lead data.",
+      "Architected the whole submission-to-routed-lead path to run unattended, with no manual intervention at any stage.",
     ],
     result:
-      "A live proptech product serving the Greater Toronto Area. 100+ leads generated with 80% converting to phone-qualified opportunities, delivering estimates in about 60 seconds instead of days.",
+      "A live acquisition pipeline rather than a calculator, operating as a registered Canadian corporation. 100+ leads generated at 80% phone-qualified conversion, routed to contractors on paid monthly subscriptions — they receive a homeowner who already knows their number, has verified they are reachable, and arrives with a satellite-measured scope and estimated job cost attached, instead of being one of four bids in an aggregator auction.",
   },
   {
     slug: "trayce",

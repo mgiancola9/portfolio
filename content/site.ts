@@ -3,7 +3,7 @@ export const site = {
   // One line that has to work for software, forward-deployed, and ML recruiters at once.
   tagline: "I build systems that ship to real users.",
   intro:
-    "Mechatronics Engineering & Management at McMaster, graduating April 2027. Most recently an ML engineer intern on Shopify's Merchant Risk team, where I rebuilt fraud-model monitoring and cut a pipeline's compute cost from $40K to $3K a year. On the side I co-founded a proptech startup that estimates roof costs from satellite imagery.",
+    "Mechatronics Engineering & Management at McMaster, graduating April 2027. Most recently an ML engineer intern on Shopify's Merchant Risk team, where I rebuilt fraud-model monitoring and cut a pipeline's compute cost from $40K to $3K a year. On the side I co-founded a proptech startup that automates roofing lead generation end to end — trained Meta ad campaigns bring homeowners in, a satellite roof estimate qualifies them, and verified leads route straight to subscribed contractors in their service area.",
   location: "Toronto / Richmond Hill, ON",
   email: "mgiancola9@gmail.com",
   phone: "(647) 919-6419",
@@ -41,7 +41,7 @@ export const experience: Role[] = [
     location: "Toronto, ON (Remote)",
     href: "https://gtaroofingestimates.ca",
     bullets: [
-      "Co-founded a proptech startup delivering instant satellite-based roof estimates to GTA homeowners, connecting them with vetted contractors — 100+ leads at 80% phone-qualified conversion.",
+      "Co-founded a registered Canadian corporation automating roofing lead generation end to end — trained Meta ad campaigns to satellite-measured homeowner to service-area-matched contractor — generating 100+ leads at 80% phone-qualified conversion for contractors on paid monthly subscriptions.",
       "Designed the backend end-to-end: Supabase Postgres with row-level security, Twilio SMS verification, and n8n orchestration routing verified leads in real time.",
       "Architected the submission-to-live-lead pipeline to run unattended at scale, with zero manual intervention on routing.",
     ],

@@ -62,7 +62,7 @@ export default async function ProjectPage({ params }: Params) {
                   rel="noopener noreferrer"
                   className="rounded-full border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
                 >
-                  {l.label} &nearr;
+                  {l.label} ↗
                 </a>
               ))}
             </div>
