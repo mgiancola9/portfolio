@@ -89,7 +89,7 @@ export const projects: Project[] = [
       "End-to-end pipeline that ingests NHL and advanced-analytics data, predicts player props with calibrated gradient-boosted models, and flags +EV positions against live sportsbook and prediction-market prices.",
     category: "ml",
     tags: ["Python", "XGBoost", "DuckDB", "scikit-learn", "Kelly Criterion", "pandas"],
-    links: [],
+    links: [{ label: "GitHub", href: "https://github.com/mgiancola9/nhl-props" }],
     featured: true,
     problem:
       "Sportsbook player-prop lines are softer than game lines, but finding the soft ones requires a probability estimate good enough to trust against a price — and a raw classifier score is not a probability. Edges only show up if the model is calibrated and the pipeline can run against live markets before lines move.",
@@ -163,22 +163,6 @@ export const projects: Project[] = [
     ],
     result:
       "Two fully playable games running on hardware, covering the full path from schematic to firmware.",
-  },
-  {
-    slug: "circuits-design",
-    title: "Circuits Design Project",
-    tagline:
-      "Analog and digital circuit design and simulation in Multisim.",
-    category: "embedded",
-    tags: ["Multisim", "Electronic Circuits", "Digital Circuit Design"],
-    links: [],
-    problem:
-      "Designing circuits that meet a specification on paper is straightforward; validating that they hold up under simulated real-world conditions is where designs usually fail.",
-    approach: [
-      "Designed and simulated analog and digital circuits in Multisim against target specifications.",
-    ],
-    result:
-      "Verified designs meeting specification under simulation.",
   },
 ];
 
