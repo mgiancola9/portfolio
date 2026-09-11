@@ -53,7 +53,11 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <article className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-accent/60">
       {project.image && (
-        <div className="relative aspect-[16/9] border-b border-border bg-bg">
+        <div
+          className={`relative aspect-[16/9] border-b border-border ${
+            project.imageFit === "contain" ? "bg-white" : "bg-bg"
+          }`}
+        >
           <Image
             src={project.image}
             alt={project.imageAlt ?? project.title}

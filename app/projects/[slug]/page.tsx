@@ -70,7 +70,11 @@ export default async function ProjectPage({ params }: Params) {
         </header>
 
         {project.image && (
-          <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-xl border border-border bg-surface">
+          <div
+            className={`relative mt-10 aspect-[16/9] overflow-hidden rounded-xl border border-border ${
+              project.imageFit === "contain" ? "bg-white" : "bg-surface"
+            }`}
+          >
             <Image
               src={project.image}
               alt={project.imageAlt ?? project.title}
