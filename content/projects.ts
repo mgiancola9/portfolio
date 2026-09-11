@@ -15,6 +15,8 @@ export type Project = {
   /** Drop a file in public/projects/ and point here, e.g. "/projects/trayce.png". */
   image?: string;
   imageAlt?: string;
+  /** "contain" for logos and other art that must not be cropped. Defaults to "cover". */
+  imageFit?: "cover" | "contain";
   /** Case-study body. Kept short on purpose — recruiters skim. */
   problem: string;
   approach: string[];
@@ -65,24 +67,28 @@ export const projects: Project[] = [
     imageAlt: "The Trayce hospital food-delivery dashboard",
     title: "Trayce",
     tagline:
-      "A dashboard helping hospitals optimize patient food delivery and cut waste. 3rd place at the Enactus × Canadian Tire Environmental Sustainability Challenge, 2025.",
+      "A hospital food-service dashboard that forecasts ward census, automatically holds meals for patients who won't eat them, and optimizes tray delivery routes. 3rd place at the Enactus × Canadian Tire Environmental Sustainability Challenge, 2025.",
     period: "2025",
     category: "product",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Data Visualization"],
+    tags: ["Next.js", "TypeScript", "Forecasting", "Route Optimization", "Data Visualization"],
     links: [{ label: "GitHub", href: "https://github.com/mgiancola9/trayce-dashboard" }],
     featured: true,
     problem:
-      "Hospital food service runs on fixed schedules that ignore what patients actually eat. Trays go out late, come back untouched, and the resulting waste is both an environmental cost and a patient-care problem.",
+      "Hospital kitchens cook to a bed count taken hours before service. By the time trays go out, patients have been discharged, sent to surgery, or placed NPO — so meals get plated, delivered, and thrown away untouched. The waste is an environmental cost and a budget line at once, and the paper-log workflows behind it keep the size of the problem invisible.",
     approach: [
-      "Built an operations dashboard giving food-service staff a single view of delivery timing and consumption patterns across wards.",
-      "Surfaced the waste and routing signals that were previously buried in paper logs, so schedules could be adjusted against real demand.",
+      "Built a predictive hub forecasting ward census 12 hours ahead and tracking admissions against discharges on a rolling 24-hour window, so the kitchen cooks toward where the ward is heading rather than where it was.",
+      "Automated meal holds off clinical signals: a patient marked NPO for surgery or flagged as pending discharge has their tray held before it is ever plated, instead of counted as waste after it comes back.",
+      "Simulated tray routes from the kitchen hub through each wing, surfacing average transit time against baseline so prep order and delivery sequence could be tuned together.",
+      "Replaced paper logs with live tray tracking — prep, in transit, delivered, with per-room ETAs — giving food-service staff one operational view of the floor.",
+      "Rolled the operational data into a sustainability panel tracking waste diverted, CO₂e avoided, and cost savings against annual targets, which is what turned an ops tool into a sustainability argument.",
     ],
     result:
-      "Placed 3rd in the 2025 Enactus Canadian Tire Environmental Sustainability Challenge, competing nationally on measurable environmental impact.",
+      "Placed 3rd in the 2025 Enactus Canadian Tire Environmental Sustainability Challenge, competing nationally on measurable environmental impact. The case rested on quantifying what the system prevents rather than what it reports — meals held before plating, transit time cut against baseline, and waste and CO₂e diverted against annual targets.",
   },
   {
     slug: "nhl-props-model",
     image: "/projects/nhl-props-model.png",
+    imageFit: "contain",
     imageAlt: "The NHL props model's +EV board",
     title: "NHL Player Props Model",
     tagline:
@@ -106,6 +112,7 @@ export const projects: Project[] = [
   {
     slug: "nfl-predictions",
     image: "/projects/nfl-predictions.png",
+    imageFit: "contain",
     imageAlt: "NFL model evaluation output",
     title: "NFL Predictions Model",
     tagline:

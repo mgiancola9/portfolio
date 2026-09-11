@@ -76,7 +76,7 @@ export default async function ProjectPage({ params }: Params) {
               alt={project.imageAlt ?? project.title}
               fill
               sizes="(max-width: 768px) 100vw, 768px"
-              className="object-cover"
+              className={project.imageFit === "contain" ? "object-contain p-10" : "object-cover"}
               priority
             />
           </div>

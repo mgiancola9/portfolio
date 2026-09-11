@@ -59,7 +59,7 @@ function ProjectCard({ project }: { project: Project }) {
             alt={project.imageAlt ?? project.title}
             fill
             sizes="(max-width: 640px) 100vw, 50vw"
-            className="object-cover"
+            className={project.imageFit === "contain" ? "object-contain p-6" : "object-cover"}
           />
         </div>
       )}
