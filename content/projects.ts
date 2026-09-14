@@ -71,7 +71,10 @@ export const projects: Project[] = [
     period: "2025",
     category: "product",
     tags: ["Next.js", "TypeScript", "Forecasting", "Route Optimization", "Data Visualization"],
-    links: [{ label: "GitHub", href: "https://github.com/mgiancola9/trayce-dashboard" }],
+    links: [
+      { label: "Live site", href: "https://trayce-dashboard.vercel.app" },
+      { label: "GitHub", href: "https://github.com/mgiancola9/trayce-dashboard" },
+    ],
     featured: true,
     problem:
       "Hospital kitchens cook to a bed count taken hours before service. By the time trays go out, patients have been discharged, sent to surgery, or placed NPO — so meals get plated, delivered, and thrown away untouched. The waste is an environmental cost and a budget line at once, and the paper-log workflows behind it keep the size of the problem invisible.",
